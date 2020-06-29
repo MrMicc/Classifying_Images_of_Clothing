@@ -30,4 +30,16 @@ class NN():
         print('Accuracy on test dataset: {}'.format(test_accuracy))
         print('Test Loss: {}'.format(test_loss))
 
+    def prediction(self, dataset, batch_size: int=32):
+        dataset = dataset.cache().batch(batch_size)
+        for test_images, test_labels in dataset.take(1):
+            test_images = test_images.numpy()
+            test_labels = test_labels.numpy()
+
+            print(test_images.shape)
+            predictions = self.model.predict(test_images)
+
+        return predictions, test_labels, test_images
+
+
 
