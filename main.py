@@ -9,7 +9,7 @@ print('Number of examples that I\'m going to use:\n',
 
 #dts.explore_dataset(class_names=class_names,qtd=25)
 
-md = model.NN(neurons=1024)
+md = model.NN(neurons=128)
 
 md.compile()
 
